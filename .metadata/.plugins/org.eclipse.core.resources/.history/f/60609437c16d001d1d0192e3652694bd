@@ -1,0 +1,5 @@
+package com.jspider.Hibernateonetomany.Dao;
+
+public class FatherChildDao {
+
+}

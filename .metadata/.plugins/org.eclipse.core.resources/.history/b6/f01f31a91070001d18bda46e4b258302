@@ -1,0 +1,11 @@
+package com.jspider.Hibernate2.dto;
+
+import javax.persistence.Entity;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class HusbandDto {
+		
+}

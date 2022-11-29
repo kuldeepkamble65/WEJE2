@@ -1,0 +1,12 @@
+package com.jspider.HibernateoneToone.Dto;
+
+@Entity
+public class HusbandDto {
+	private int id;
+	private String Name;
+	private String Email;
+	private int age;
+	private long contact;
+	
+	@oneToone
+}

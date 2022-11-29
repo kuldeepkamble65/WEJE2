@@ -1,0 +1,2 @@
+module multithreadingtask2 {
+}

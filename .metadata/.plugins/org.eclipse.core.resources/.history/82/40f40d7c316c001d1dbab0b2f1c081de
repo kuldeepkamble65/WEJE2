@@ -1,0 +1,5 @@
+package com.jspider.Hibernate1.Dto;
+
+public class StudentDao {
+
+}

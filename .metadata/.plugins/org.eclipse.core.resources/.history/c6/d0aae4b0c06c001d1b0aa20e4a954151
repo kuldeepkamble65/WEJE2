@@ -1,0 +1,6 @@
+package com.jspider.Hibernate2.dto;
+
+@Entity
+public class HusbandDto {
+
+}

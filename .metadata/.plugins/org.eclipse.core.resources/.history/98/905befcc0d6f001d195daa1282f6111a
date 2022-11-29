@@ -1,0 +1,21 @@
+package com.jspider.Hibernateonetomany.Dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import antlr.collections.List;
+import lombok.Data;
+
+@Entity
+@Data
+public class FatherDto {
+		@Id
+		private int id;
+		private String Name;
+		private String email;
+		private int age;
+		
+		@OneToMany
+		List children;
+}

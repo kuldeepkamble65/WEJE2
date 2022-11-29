@@ -1,0 +1,1 @@
+package com.jspider.Hibernate2.dto;

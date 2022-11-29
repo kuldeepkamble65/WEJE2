@@ -1,0 +1,5 @@
+package com.jspider.Hibernateonetomany.Dto;
+
+public class EmployeeDto {
+
+}

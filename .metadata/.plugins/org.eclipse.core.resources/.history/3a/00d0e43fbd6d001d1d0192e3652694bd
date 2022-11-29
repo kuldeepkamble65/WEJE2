@@ -1,0 +1,15 @@
+package com.jspider.Hibernateonetomany.Dto;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class CompanayDto {
+	@Id
+	private int id;
+	private String Name;
+	private String city;
+}

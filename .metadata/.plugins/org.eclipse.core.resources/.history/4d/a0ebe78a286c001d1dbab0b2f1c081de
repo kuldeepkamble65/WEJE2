@@ -1,0 +1,5 @@
+package com.jspider.Hibernate1.Dao;
+
+public @interface data {
+
+}

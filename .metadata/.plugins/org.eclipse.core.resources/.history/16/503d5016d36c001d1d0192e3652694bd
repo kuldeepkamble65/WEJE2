@@ -1,0 +1,5 @@
+package com.jspider.HibernateoneToone.Dto;
+
+public class WifeDto {
+
+}

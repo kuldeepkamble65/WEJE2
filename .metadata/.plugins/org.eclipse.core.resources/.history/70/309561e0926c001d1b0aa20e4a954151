@@ -1,0 +1,16 @@
+package com.jspider.Hibernate1.Dao;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+@data
+public class StudentDto {
+	@Id
+	private int id;
+	private String name;
+	private String email;
+	private long contact;
+	private String city;
+	
+}

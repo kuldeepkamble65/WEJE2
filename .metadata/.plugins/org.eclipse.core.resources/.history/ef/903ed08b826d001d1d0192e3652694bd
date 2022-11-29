@@ -1,0 +1,73 @@
+package com.jspider.HibernateoneToone.Dao;
+
+import java.lang.reflect.Method;
+
+//import java.lang.invoke.ClassSpecializer.Factory;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+import org.hibernate.TransactionException;
+
+import com.jspider.HibernateoneToone.Dto.HusbandDto;
+import com.jspider.HibernateoneToone.Dto.WifeDto;
+
+public class HusbandwifeDao {
+		private static EntityManagerFactory factroy;
+		private static EntityManager manager;
+		private static EntityTransaction transaction;
+		
+		public static void openConnection() {
+			factroy = Persistence.createEntityManagerFactory("oneToone");
+			manager = factroy.createEntityManager();
+			transaction = manager.getTransaction();
+		}
+		public static  void closeConnection() {
+			if(factroy != null) {
+				factroy.close();
+			}
+			if(manager != null) {
+				manager.close();
+			}
+			if(transaction !=null) {
+				try {
+				transaction.rollback();
+			
+			}catch(TransactionException e) {
+				System.out.println("Trasaction is Commited");
+			}
+
+		}
+}
+		public static void main(String[] args) {
+			try {
+			openConnection();
+			transaction.begin();
+			
+			WifeDto wife = new WifeDto();
+			wife.setId(1);
+			wife.setName("anajali");
+			wife.setEmail("anjali@kkhh.com");
+			wife.setAge(25);
+			wife.setContact(1234987654L);
+			
+			manager.persist(wife);
+			
+			HusbandDto husband = new HusbandDto();
+			husband.setId(1);
+			husband.setName("rahul");
+			husband.setEmail("rahul@123.com");
+			husband.setAge(27);
+			husband.setContact(1234687437L);
+			
+			husband.setWife(wife);
+			manager.persist(husband);
+			transaction.commit();
+			
+		}finally {
+			closeConnection();
+		}
+	}
+}
